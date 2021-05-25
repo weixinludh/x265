@@ -25,7 +25,7 @@
 #define X265_LEVEL_H 1
 
 #include "common.h"
-#include "x265.h"
+#include "../x265.h"
 
 namespace X265_NS {
 // encoder private namespace

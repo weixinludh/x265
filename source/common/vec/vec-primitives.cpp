@@ -22,7 +22,7 @@
  *****************************************************************************/
 
 #include "primitives.h"
-#include "x265.h"
+#include "../x265.h"
 
 /* The #if logic here must match the file lists in CMakeLists.txt */
 #if X265_ARCH_X86

@@ -186,6 +186,7 @@ static const struct option long_options[] =
     { "bitrate",        required_argument, NULL, 0 },
     { "qp",             required_argument, NULL, 'q' },
     { "aq-mode",        required_argument, NULL, 0 },
+    { "heatmap",        required_argument, NULL, NULL},
     { "aq-strength",    required_argument, NULL, 0 },
     { "rc-grain",             no_argument, NULL, 0 },
     { "no-rc-grain",          no_argument, NULL, 0 },

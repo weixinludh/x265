@@ -26,7 +26,7 @@
 
 #include "common.h"
 #include "md5.h"
-#include "x265.h"
+#include "../x265.h"
 struct x265_picyuv {};
 
 namespace X265_NS {

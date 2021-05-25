@@ -25,7 +25,7 @@
 #ifndef X265_RECONPLAY_H
 #define X265_RECONPLAY_H
 
-#include "x265.h"
+#include "../x265.h"
 #include "threading.h"
 #include <cstdio>
 

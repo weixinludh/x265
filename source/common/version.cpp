@@ -22,7 +22,7 @@
  * For more information, contact us at license @ x265.com.
  *****************************************************************************/
 
-#include "x265.h"
+#include "../x265.h"
 #include "common.h"
 #include "primitives.h"
 

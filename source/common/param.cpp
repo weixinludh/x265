@@ -27,7 +27,7 @@
 #include "threading.h"
 #include "param.h"
 #include "cpu.h"
-#include "x265.h"
+#include "../x265.h"
 #include "svt.h"
 
 #if _MSC_VER
@@ -747,6 +747,7 @@ int x265_zone_param_parse(x265_param* p, const char* name, const char* value)
         p->rc.rateControlMode = X265_RC_ABR;
     }
     OPT("aq-mode") p->rc.aqMode = atoi(value);
+    OPT("heatmap") p->rc.heatMapDir = value;
     OPT("aq-strength") p->rc.aqStrength = atof(value);
     OPT("nr-intra") p->noiseReductionIntra = atoi(value);
     OPT("nr-inter") p->noiseReductionInter = atoi(value);
@@ -1049,6 +1050,7 @@ int x265_param_parse(x265_param* p, const char* name, const char* value)
     OPT("cplxblur") p->rc.complexityBlur = atof(value);
     OPT("qblur") p->rc.qblur = atof(value);
     OPT("aq-mode") p->rc.aqMode = atoi(value);
+    OPT("heatmap")  p->rc.heatMapDir = value;
     OPT("aq-strength") p->rc.aqStrength = atof(value);
     OPT("vbv-maxrate") p->rc.vbvMaxBitrate = atoi(value);
     OPT("vbv-bufsize") p->rc.vbvBufferSize = atoi(value);
@@ -1628,7 +1630,7 @@ int x265_check_params(x265_param* param)
           "Lookahead depth must be less than 256");
     CHECK(param->lookaheadSlices > 16 || param->lookaheadSlices < 0,
           "Lookahead slices must between 0 and 16");
-    CHECK(param->rc.aqMode < X265_AQ_NONE || X265_AQ_EDGE < param->rc.aqMode,
+    CHECK(param->rc.aqMode < X265_AQ_NONE || X265_AQ_HEATMAP < param->rc.aqMode,
           "Aq-Mode is out of range");
     CHECK(param->rc.aqStrength < 0 || param->rc.aqStrength > 3,
           "Aq-Strength is out of range");
@@ -2167,6 +2169,7 @@ char *x265_param2string(x265_param* p, int padx, int pady)
             s += sprintf(s, " pbratio=%.2f", p->rc.pbFactor);
     }
     s += sprintf(s, " aq-mode=%d", p->rc.aqMode);
+    s += sprintf(s, " heatmap=%s", p->rc.heatMapDir);
     s += sprintf(s, " aq-strength=%.2f", p->rc.aqStrength);
     BOOL(p->rc.cuTree, "cutree");
     s += sprintf(s, " zone-count=%d", p->rc.zoneCount);

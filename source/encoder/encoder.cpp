@@ -40,7 +40,7 @@
 #include "dpb.h"
 #include "nal.h"
 
-#include "x265.h"
+#include "../x265.h"
 
 #if _MSC_VER
 #pragma warning(disable: 4996) // POSIX functions are just fine, thanks

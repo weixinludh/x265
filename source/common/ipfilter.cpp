@@ -26,7 +26,7 @@
 
 #include "common.h"
 #include "primitives.h"
-#include "x265.h"
+#include "../x265.h"
 
 using namespace X265_NS;
 

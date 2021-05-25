@@ -25,7 +25,7 @@
 
 #include "common.h"
 #include "primitives.h"
-#include "x265.h"
+#include "../../x265.h"
 #include "cpu.h"
 
 #define FUNCDEF_TU(ret, name, cpu, ...) \

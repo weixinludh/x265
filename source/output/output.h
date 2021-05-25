@@ -25,7 +25,7 @@
 #ifndef X265_OUTPUT_H
 #define X265_OUTPUT_H
 
-#include "x265.h"
+#include "../x265.h"
 #include "input/input.h"
 
 namespace X265_NS {

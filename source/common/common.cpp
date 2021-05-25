@@ -24,7 +24,7 @@
 #include "common.h"
 #include "slice.h"
 #include "threading.h"
-#include "x265.h"
+#include "../x265.h"
 
 #if _WIN32
 #include <sys/types.h>

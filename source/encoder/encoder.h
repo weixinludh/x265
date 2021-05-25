@@ -28,7 +28,7 @@
 #include "slice.h"
 #include "threading.h"
 #include "scalinglist.h"
-#include "x265.h"
+#include "../x265.h"
 #include "nal.h"
 #include "framedata.h"
 #include "svt.h"

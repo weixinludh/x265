@@ -28,7 +28,7 @@
 #include "common.h"
 #include "slicetype.h"      // LOWRES_COST_MASK
 #include "primitives.h"
-#include "x265.h"
+#include "../x265.h"
 
 #include <cstdlib> // abs()
 

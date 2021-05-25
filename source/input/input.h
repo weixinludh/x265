@@ -86,4 +86,15 @@ public:
 };
 }
 
+class HeatMap
+{
+
+public:
+    static void png_abort_(const char * s, ...);
+    static int count_dir_files(const char* _dir);
+    static void gen_annot_file_name(int _i, char* _name);
+    static void read_png_file(char* file_name, int& height, int& width, int& bit_depth, int**& img_arr);
+    static void read_png_by_frame(const char* annot_dir, int***& img_arr_by_frame);
+};
+
 #endif // ifndef X265_INPUT_H

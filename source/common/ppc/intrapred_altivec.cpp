@@ -36,7 +36,7 @@
 
 #include "common.h"
 #include "primitives.h"
-#include "x265.h"
+#include "../../x265.h"
 #include "ppccommon.h"
 
 //using namespace std ;

@@ -86,6 +86,8 @@ endif()
 
 if(UNIX)
     list(APPEND PLATFORM_LIBS pthread)
+    link_directories("/usr/local/lib")
+    list(APPEND PLATFORM_LIBS png16)
     find_library(LIBRT rt)
     if(LIBRT)
         list(APPEND PLATFORM_LIBS rt)
@@ -469,6 +471,13 @@ if(WIN32)
     endif(WINXP_SUPPORT)
 endif()
 
+find_package(PNG)
+if (PNG_FOUND)
+    include_directories(${PNG_INCLUDE_DIRS})
+    add_definitions(-DPNG)
+    message(STATUS "PNG")
+    link_directories(${PNG_LIBRARY_DIRS})
+endif()
 if(POWER)
     # IBM Power8
     option(ENABLE_ALTIVEC "Enable ALTIVEC profiling instrumentation" ON)
@@ -731,6 +740,8 @@ if(ENABLE_CLI)
                           output/raw.cpp)               # muxers
     source_group(input FILES ${InputFiles})
     source_group(output FILES ${OutputFiles})
+
+    # target_link_libraries(cli x265-static ${PNG_LIBRARY_DIRS})
 
     check_include_files(getopt.h HAVE_GETOPT_H)
     if(NOT HAVE_GETOPT_H)

@@ -40,7 +40,7 @@
 #include <memory.h>
 #include <assert.h>
 
-#include "x265.h"
+#include "../x265.h"
 
 #if ENABLE_PPA && ENABLE_VTUNE
 #error "PPA and VTUNE cannot both be enabled. Disable one of them."

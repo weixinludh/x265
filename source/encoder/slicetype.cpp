@@ -526,7 +526,7 @@ void LookaheadTLD::calcAdaptiveQuantFrame(Frame *curFrame, x265_param* param)
                         curFrame->m_fencPic->m_stride, curFrame->m_fencPic->m_picWidth, curFrame->m_fencPic->m_picHeight, SHIFT_TO_BITPLANE);
                 }
 
-                if (param->rc.aqMode == X265_AQ_AUTO_VARIANCE || param->rc.aqMode == X265_AQ_AUTO_VARIANCE_BIASED || param->rc.aqMode == X265_AQ_EDGE)
+                if (param->rc.aqMode == X265_AQ_AUTO_VARIANCE || param->rc.aqMode == X265_AQ_AUTO_VARIANCE_BIASED || param->rc.aqMode == X265_AQ_EDGE || param->rc.aqMode == X265_AQ_HEATMAP)
                 {
                     double bit_depth_correction = 1.f / (1 << (2 * (X265_DEPTH - 8)));
                     for (int blockY = 0; blockY < maxRow; blockY += loopIncr)
@@ -553,6 +553,11 @@ void LookaheadTLD::calcAdaptiveQuantFrame(Frame *curFrame, x265_param* param)
                                     curFrame->m_lowres.edgeInclined[blockXY] = 0;
                                 }
                             }
+                            else if (param->rc.aqMode == X265_AQ_HEATMAP)
+                            {
+                                // energy = XXX;
+                                // qp_adj = pow(energy * bit_depth_correction + 1, 0.1);
+                            }
                             else
                                 qp_adj = pow(energy * bit_depth_correction + 1, 0.1);
                             curFrame->m_lowres.qpCuTreeOffset[blockXY] = qp_adj;
@@ -571,11 +576,12 @@ void LookaheadTLD::calcAdaptiveQuantFrame(Frame *curFrame, x265_param* param)
                     strength = param->rc.aqStrength * 1.0397f;
 
                 blockXY = 0;
+                printf("new aqCuTreeOffset of each block by aq mode\n");
                 for (int blockY = 0; blockY < maxRow; blockY += loopIncr)
                 {
                     for (int blockX = 0; blockX < maxCol; blockX += loopIncr)
                     {
-                        if (param->rc.aqMode == X265_AQ_AUTO_VARIANCE_BIASED)
+                        if (param->rc.aqMode == X265_AQ_AUTO_VARIANCE_BIASED || param->rc.aqMode == X265_AQ_HEATMAP)
                         {
                             qp_adj = curFrame->m_lowres.qpCuTreeOffset[blockXY];
                             qp_adj = strength * (qp_adj - avg_adj) + bias_strength * (1.f - modeTwoConst / (qp_adj * qp_adj));

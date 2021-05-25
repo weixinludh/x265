@@ -25,7 +25,7 @@
 #define X265_NAL_H
 
 #include "common.h"
-#include "x265.h"
+#include "../x265.h"
 
 namespace X265_NS {
 // private namespace

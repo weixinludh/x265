@@ -271,6 +271,7 @@ int main(int argc, char **argv)
     uint8_t numEncodes = 1;
     FILE *abrConfig = NULL;
     bool isAbrLadder = checkAbrLadder(argc, argv, &abrConfig);
+    // printf("isAbrLadder: %d\n", isAbrLadder);
 
     if (isAbrLadder)
         numEncodes = getNumAbrEncodes(abrConfig);
