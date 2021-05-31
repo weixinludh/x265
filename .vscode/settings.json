@@ -6,6 +6,7 @@
         "chrono": "cpp",
         "map": "cpp",
         "unordered_map": "cpp",
-        "cstdio": "cpp"
+        "cstdio": "cpp",
+        "functional": "cpp"
     }
 }

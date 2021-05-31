@@ -199,15 +199,15 @@ common/CMakeFiles/common.dir/version.cpp.o: common/CMakeFiles/common.dir/flags.m
 common/CMakeFiles/common.dir/version.cpp.o: /Users/weixin/work/encoder/x265/source/common/version.cpp
 common/CMakeFiles/common.dir/version.cpp.o: common/CMakeFiles/common.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/weixin/work/encoder/x265/build/linux/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object common/CMakeFiles/common.dir/version.cpp.o"
-	cd /Users/weixin/work/encoder/x265/build/linux/common && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+28-419182243 -MD -MT common/CMakeFiles/common.dir/version.cpp.o -MF CMakeFiles/common.dir/version.cpp.o.d -o CMakeFiles/common.dir/version.cpp.o -c /Users/weixin/work/encoder/x265/source/common/version.cpp
+	cd /Users/weixin/work/encoder/x265/build/linux/common && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+29-029325705 -MD -MT common/CMakeFiles/common.dir/version.cpp.o -MF CMakeFiles/common.dir/version.cpp.o.d -o CMakeFiles/common.dir/version.cpp.o -c /Users/weixin/work/encoder/x265/source/common/version.cpp
 
 common/CMakeFiles/common.dir/version.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/version.cpp.i"
-	cd /Users/weixin/work/encoder/x265/build/linux/common && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+28-419182243 -E /Users/weixin/work/encoder/x265/source/common/version.cpp > CMakeFiles/common.dir/version.cpp.i
+	cd /Users/weixin/work/encoder/x265/build/linux/common && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+29-029325705 -E /Users/weixin/work/encoder/x265/source/common/version.cpp > CMakeFiles/common.dir/version.cpp.i
 
 common/CMakeFiles/common.dir/version.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/version.cpp.s"
-	cd /Users/weixin/work/encoder/x265/build/linux/common && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+28-419182243 -S /Users/weixin/work/encoder/x265/source/common/version.cpp -o CMakeFiles/common.dir/version.cpp.s
+	cd /Users/weixin/work/encoder/x265/build/linux/common && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+29-029325705 -S /Users/weixin/work/encoder/x265/source/common/version.cpp -o CMakeFiles/common.dir/version.cpp.s
 
 common/CMakeFiles/common.dir/threading.cpp.o: common/CMakeFiles/common.dir/flags.make
 common/CMakeFiles/common.dir/threading.cpp.o: /Users/weixin/work/encoder/x265/source/common/threading.cpp

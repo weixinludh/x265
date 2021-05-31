@@ -10,7 +10,7 @@ CXX_FLAGS = -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacO
 
 # Custom flags: common/CMakeFiles/common.dir/cpu.cpp.o_FLAGS = -Wno-narrowing
 
-# Custom flags: common/CMakeFiles/common.dir/version.cpp.o_FLAGS = -DX265_VERSION=3.4+28-419182243
+# Custom flags: common/CMakeFiles/common.dir/version.cpp.o_FLAGS = -DX265_VERSION=3.4+29-029325705
 
 # Custom flags: common/CMakeFiles/common.dir/param.cpp.o_FLAGS = -DHAVE_STRTOK_R=1
 

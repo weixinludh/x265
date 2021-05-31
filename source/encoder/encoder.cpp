@@ -2509,6 +2509,7 @@ int Encoder::reconfigureParam(x265_param* encParam, x265_param* param)
             encParam->scalingLists = strdup(param->scalingLists);
 
         encParam->rc.aqMode = param->rc.aqMode;
+        encParam->rc.heatMapArrByFrame = param->rc.heatMapArrByFrame;
         encParam->rc.aqStrength = param->rc.aqStrength;
         encParam->noiseReductionInter = param->noiseReductionInter;
         encParam->noiseReductionIntra = param->noiseReductionIntra;
@@ -3493,6 +3494,7 @@ void Encoder::configureZone(x265_param *p, x265_param *zone)
             p->scalingLists = strdup(zone->scalingLists);
 
         p->rc.aqMode = zone->rc.aqMode;
+        p->rc.heatMapArrByFrame = zone->rc.heatMapArrByFrame;
         p->rc.aqStrength = zone->rc.aqStrength;
         p->noiseReductionInter = zone->noiseReductionInter;
         p->noiseReductionIntra = zone->noiseReductionIntra;

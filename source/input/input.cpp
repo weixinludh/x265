@@ -165,6 +165,7 @@ void HeatMap::read_png_by_frame(const char* annot_dir, int***& img_arr_by_frame)
         strcat(annot_png_path, (char*)".png");
         read_png_file(annot_png_path, height, width, bit_depth, img_arr_by_frame[frame_id]);
     }
+    printf("input heatmap, height: %d, width: %d\n", height, width);
 }
 
 

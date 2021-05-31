@@ -790,6 +790,14 @@ namespace X265_NS {
 
         HeatMap heatmap;
         heatmap.read_png_by_frame(param->rc.heatMapDir, param->rc.heatMapArrByFrame);
+        printf("first pixel of heatmap: %d\n", param->rc.heatMapArrByFrame[0][0][0]);
+        // for(int i = 0; i < 360; ++i)
+        // {
+        //     for(int j = 0; j < 640; ++j)
+        //     {
+        //         printf("heatmap pixel: %d\n", param->rc.heatMapArrByFrame[0][i][j]);
+        //     }
+        // }
 
 
         this->input = InputFile::open(info, this->bForceY4m);
@@ -810,6 +818,7 @@ namespace X265_NS {
         param->sourceHeight = info.height;
         param->internalCsp = info.csp;
         param->sourceBitDepth = info.depth;
+        printf("input video, height: %d, width: %d\n", param->sourceHeight, param->sourceWidth);
 
         /* Accept fps and sar from file info if not specified by user */
         if (param->fpsDenom == 0 || param->fpsNum == 0)

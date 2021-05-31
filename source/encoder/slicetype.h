@@ -102,6 +102,7 @@ struct LookaheadTLD
 protected:
 
     uint32_t acEnergyCu(Frame* curFrame, uint32_t blockX, uint32_t blockY, int csp, uint32_t qgSize);
+    uint32_t acEnergyHeatMapCu(Frame* curFrame, uint32_t blockX, uint32_t blockY, int csp, uint32_t qgSize, x265_param* param);
     uint32_t edgeDensityCu(Frame* curFrame, uint32_t &avgAngle, uint32_t blockX, uint32_t blockY, uint32_t qgSize);
     uint32_t lumaSumCu(Frame* curFrame, uint32_t blockX, uint32_t blockY, uint32_t qgSize);
     uint32_t weightCostLuma(Lowres& fenc, Lowres& ref, WeightParam& wp);
