@@ -3763,7 +3763,8 @@ common/CMakeFiles/common.dir/pixel.cpp.o: /Users/weixin/work/encoder/x265/source
   /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/gethostuuid.h \
   /Users/weixin/work/encoder/x265/source/common/yuv.h \
   /Users/weixin/work/encoder/x265/source/common/piclist.h \
-  /Users/weixin/work/encoder/x265/source/common/threadpool.h
+  /Users/weixin/work/encoder/x265/source/common/threadpool.h \
+  /Users/weixin/work/encoder/x265/source/input/input.h
 
 common/CMakeFiles/common.dir/predict.cpp.o: /Users/weixin/work/encoder/x265/source/common/predict.cpp \
   /Users/weixin/work/encoder/x265/source/common/common.h \
@@ -6153,11 +6154,13 @@ common/CMakeFiles/common.dir/yuv.cpp.o: /Users/weixin/work/encoder/x265/source/c
 
 /Users/weixin/work/encoder/x265/source/common/primitives.cpp:
 
-/Users/weixin/work/encoder/x265/source/common/scalinglist.h:
-
 /Users/weixin/work/encoder/x265/source/common/predict.h:
 
 /Users/weixin/work/encoder/x265/source/common/predict.cpp:
+
+/Users/weixin/work/encoder/x265/source/common/scalinglist.h:
+
+/Users/weixin/work/encoder/x265/source/input/input.h:
 
 /Users/weixin/work/encoder/x265/source/common/yuv.h:
 

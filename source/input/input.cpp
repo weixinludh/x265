@@ -168,4 +168,25 @@ void HeatMap::read_png_by_frame(const char* annot_dir, int***& img_arr_by_frame)
     printf("input heatmap, height: %d, width: %d\n", height, width);
 }
 
+void HeatMap::get_annot_dir(const char* _annot_dir)
+{
+    HeatMap::annot_dir = _annot_dir;
+}
+
+int** HeatMap::read_frame_heatmap(int frame_id)
+{
+    int height, width, bit_depth;
+    int frame_num = count_dir_files(HeatMap::annot_dir);
+    char annot_file_name[5];
+    gen_annot_file_name(frame_id + 1, annot_file_name);
+    char* annot_png_path = (char*)malloc(strlen(annot_dir)+strlen(annot_file_name)+6);
+    strcpy(annot_png_path, annot_dir);
+    strcat(annot_png_path, (char*)"/");
+    strcat(annot_png_path, annot_file_name);
+    strcat(annot_png_path, (char*)".png");
+    int** frame_heatmap = NULL;
+    read_png_file(annot_png_path, height, width, bit_depth, frame_heatmap);
+    return frame_heatmap;
+}
+
 

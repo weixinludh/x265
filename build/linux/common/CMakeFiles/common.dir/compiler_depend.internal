@@ -3783,6 +3783,7 @@ common/CMakeFiles/common.dir/pixel.cpp.o
  /Users/weixin/work/encoder/x265/source/common/yuv.h
  /Users/weixin/work/encoder/x265/source/common/piclist.h
  /Users/weixin/work/encoder/x265/source/common/threadpool.h
+ /Users/weixin/work/encoder/x265/source/input/input.h
 
 common/CMakeFiles/common.dir/predict.cpp.o
  /Users/weixin/work/encoder/x265/source/common/predict.cpp

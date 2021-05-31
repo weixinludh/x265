@@ -496,6 +496,7 @@ endif()
 
 include(Version) # determine X265_VERSION and X265_LATEST_TAG
 include_directories(. common encoder "${PROJECT_BINARY_DIR}")
+include_directories(input)
 
 option(ENABLE_PPA "Enable PPA profiling instrumentation" OFF)
 if(ENABLE_PPA)
@@ -741,7 +742,6 @@ if(ENABLE_CLI)
     source_group(input FILES ${InputFiles})
     source_group(output FILES ${OutputFiles})
 
-    # target_link_libraries(cli x265-static ${PNG_LIBRARY_DIRS})
 
     check_include_files(getopt.h HAVE_GETOPT_H)
     if(NOT HAVE_GETOPT_H)

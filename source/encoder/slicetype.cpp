@@ -470,6 +470,7 @@ void LookaheadTLD::calcAdaptiveQuantFrame(Frame *curFrame, x265_param* param)
     int maxRow = curFrame->m_fencPic->m_picHeight;
     int blockCount, loopIncr;
     float modeOneConst, modeTwoConst;
+    int** heatmap_ptr = NULL;
     if (param->rc.qgSize == 8)
     {
         blockCount = curFrame->m_lowres.maxBlocksInRowFullRes * curFrame->m_lowres.maxBlocksInColFullRes;
@@ -537,6 +538,7 @@ void LookaheadTLD::calcAdaptiveQuantFrame(Frame *curFrame, x265_param* param)
                 double avg_adj_pow2 = 0, avg_adj = 0, qp_adj = 0;
                 double bias_strength = 0.f;
                 double strength = 0.f;
+                
 
                 if (param->rc.aqMode == X265_AQ_EDGE)
                     edgeFilter(curFrame, param);
@@ -562,9 +564,9 @@ void LookaheadTLD::calcAdaptiveQuantFrame(Frame *curFrame, x265_param* param)
                     if(param->rc.aqMode == X265_AQ_HEATMAP && curFrame->frame_id == 0)
                     {
                         double frame_heat_sum = 0;
-                        int** heatmap_ptr = param->rc.heatMapArrByFrame[curFrame->frame_id];
-                        printf("here 0\n");
-                        printf("heatmap pointer: %ld\n", (long long)param->rc.heatMapArrByFrame);
+                        // heatmap_ptr = HeatMap::read_frame_heatmap(curFrame->frame_id);
+                        // printf("here 0\n");
+                        // printf("heatmap pointer: %ld\n", (long long)heatmap_ptr);
                         // for(int i = 0; i < maxRow; ++i)
                         // {
                         //     for(int j = 0; j < maxCol; ++j)

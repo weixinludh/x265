@@ -84,17 +84,24 @@ public:
 
     virtual int getHeight() const = 0;
 };
-}
 
 class HeatMap
 {
 
-public:
+private:
+    static const char* annot_dir;
     static void png_abort_(const char * s, ...);
     static int count_dir_files(const char* _dir);
     static void gen_annot_file_name(int _i, char* _name);
     static void read_png_file(char* file_name, int& height, int& width, int& bit_depth, int**& img_arr);
+public:
+    static void get_annot_dir(const char* _annot_dir);
+    static int** read_frame_heatmap(int frame_id);
     static void read_png_by_frame(const char* annot_dir, int***& img_arr_by_frame);
 };
+
+}
+
+
 
 #endif // ifndef X265_INPUT_H

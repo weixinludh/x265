@@ -119,8 +119,8 @@ encoder/clean: encoder/CMakeFiles/encoder.dir/clean
 # Target rules for target CMakeFiles/x265-shared.dir
 
 # All Build rule for target.
-CMakeFiles/x265-shared.dir/all: encoder/CMakeFiles/encoder.dir/all
 CMakeFiles/x265-shared.dir/all: common/CMakeFiles/common.dir/all
+CMakeFiles/x265-shared.dir/all: encoder/CMakeFiles/encoder.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/x265-shared.dir/build.make CMakeFiles/x265-shared.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/x265-shared.dir/build.make CMakeFiles/x265-shared.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/weixin/work/encoder/x265/build/linux/CMakeFiles --progress-num=62 "Built target x265-shared"
@@ -224,8 +224,8 @@ CMakeFiles/clean-generated.dir/clean:
 # Target rules for target CMakeFiles/x265-static.dir
 
 # All Build rule for target.
-CMakeFiles/x265-static.dir/all: encoder/CMakeFiles/encoder.dir/all
 CMakeFiles/x265-static.dir/all: common/CMakeFiles/common.dir/all
+CMakeFiles/x265-static.dir/all: encoder/CMakeFiles/encoder.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/x265-static.dir/build.make CMakeFiles/x265-static.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/x265-static.dir/build.make CMakeFiles/x265-static.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/weixin/work/encoder/x265/build/linux/CMakeFiles --progress-num=63 "Built target x265-static"

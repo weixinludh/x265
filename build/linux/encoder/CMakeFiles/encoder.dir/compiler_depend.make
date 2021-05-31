@@ -1257,6 +1257,7 @@ encoder/CMakeFiles/encoder.dir/encoder.cpp.o: /Users/weixin/work/encoder/x265/so
   /Users/weixin/work/encoder/x265/source/encoder/reference.h \
   /Users/weixin/work/encoder/x265/source/common/yuv.h \
   /Users/weixin/work/encoder/x265/source/common/piclist.h \
+  /Users/weixin/work/encoder/x265/source/input/input.h \
   /Users/weixin/work/encoder/x265/source/encoder/frameencoder.h \
   /Users/weixin/work/encoder/x265/source/common/wavefront.h \
   /Users/weixin/work/encoder/x265/source/common/bitstream.h \
@@ -1794,7 +1795,8 @@ encoder/CMakeFiles/encoder.dir/frameencoder.cpp.o: /Users/weixin/work/encoder/x2
   /Users/weixin/work/encoder/x265/source/encoder/ratecontrol.h \
   /Users/weixin/work/encoder/x265/source/encoder/sei.h \
   /Users/weixin/work/encoder/x265/source/encoder/slicetype.h \
-  /Users/weixin/work/encoder/x265/source/common/piclist.h
+  /Users/weixin/work/encoder/x265/source/common/piclist.h \
+  /Users/weixin/work/encoder/x265/source/input/input.h
 
 encoder/CMakeFiles/encoder.dir/framefilter.cpp.o: /Users/weixin/work/encoder/x265/source/encoder/framefilter.cpp \
   /Users/weixin/work/encoder/x265/source/common/common.h \
@@ -2875,6 +2877,7 @@ encoder/CMakeFiles/encoder.dir/ratecontrol.cpp.o: /Users/weixin/work/encoder/x26
   /Users/weixin/work/encoder/x265/source/common/yuv.h \
   /Users/weixin/work/encoder/x265/source/common/piclist.h \
   /Users/weixin/work/encoder/x265/source/common/threadpool.h \
+  /Users/weixin/work/encoder/x265/source/input/input.h \
   /Users/weixin/work/encoder/x265/source/encoder/ratecontrol.h \
   /Users/weixin/work/encoder/x265/source/encoder/sei.h \
   /Users/weixin/work/encoder/x265/source/common/bitstream.h
@@ -3951,6 +3954,7 @@ encoder/CMakeFiles/encoder.dir/slicetype.cpp.o: /Users/weixin/work/encoder/x265/
   /Users/weixin/work/encoder/x265/source/common/yuv.h \
   /Users/weixin/work/encoder/x265/source/common/piclist.h \
   /Users/weixin/work/encoder/x265/source/common/threadpool.h \
+  /Users/weixin/work/encoder/x265/source/input/input.h \
   /Users/weixin/work/encoder/x265/source/encoder/ratecontrol.h \
   /Users/weixin/work/encoder/x265/source/encoder/sei.h \
   /Users/weixin/work/encoder/x265/source/common/bitstream.h \
@@ -4243,6 +4247,8 @@ encoder/CMakeFiles/encoder.dir/weightPrediction.cpp.o: /Users/weixin/work/encode
 /Users/weixin/work/encoder/x265/source/common/yuv.h:
 
 /Users/weixin/work/encoder/x265/source/common/contexts.h:
+
+/Users/weixin/work/encoder/x265/source/input/input.h:
 
 /Users/weixin/work/encoder/x265/source/common/scalinglist.h:
 

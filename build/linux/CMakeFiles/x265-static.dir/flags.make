@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = -DEXPORT_C_API=1 -DHAVE_INT_TYPES_H=1 -DHIGH_BIT_DEPTH=0 -DMACOS=1 -DPNG -DX265_ARCH_X86=1 -DX265_DEPTH=8 -DX265_NS=x265 -DX86_64=1 -D__STDC_LIMIT_MACROS=1
 
-CXX_INCLUDES = -I/usr/local/include -I/Users/weixin/work/encoder/x265/source/. -I/Users/weixin/work/encoder/x265/source/common -I/Users/weixin/work/encoder/x265/source/encoder -I/Users/weixin/work/encoder/x265/build/linux
+CXX_INCLUDES = -I/usr/local/include -I/Users/weixin/work/encoder/x265/source/. -I/Users/weixin/work/encoder/x265/source/common -I/Users/weixin/work/encoder/x265/source/encoder -I/Users/weixin/work/encoder/x265/build/linux -I/Users/weixin/work/encoder/x265/source/input
 
 CXX_FLAGS = -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wall -Wextra -Wshadow -std=gnu++98 -fPIC -Wno-array-bounds -ffast-math -mstackrealign -fno-exceptions
 
