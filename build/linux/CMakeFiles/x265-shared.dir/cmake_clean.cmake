@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "libx265.198.dylib"
-  "libx265.dylib"
   "libx265.pdb"
+  "libx265.so"
+  "libx265.so.198"
 )
 
 # Per-language clean rules from dependency scanning.

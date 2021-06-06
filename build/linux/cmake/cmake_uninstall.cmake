@@ -1,13 +1,13 @@
-if(NOT EXISTS "/Users/weixin/work/encoder/x265/build/linux/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: '/Users/weixin/work/encoder/x265/build/linux/install_manifest.txt'")
+if(NOT EXISTS "/encoder/x265/build/linux/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: '/encoder/x265/build/linux/install_manifest.txt'")
 endif()
 
-file(READ "/Users/weixin/work/encoder/x265/build/linux/install_manifest.txt" files)
+file(READ "/encoder/x265/build/linux/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach(file ${files})
     message(STATUS "Uninstalling $ENV{DESTDIR}${file}")
     if(EXISTS "$ENV{DESTDIR}${file}" OR IS_SYMLINK "$ENV{DESTDIR}${file}")
-        exec_program("/usr/local/Cellar/cmake/3.20.1/bin/cmake" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
+        exec_program("/usr/bin/cmake" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
                      OUTPUT_VARIABLE rm_out
                      RETURN_VALUE rm_retval)
         if(NOT "${rm_retval}" STREQUAL 0)
