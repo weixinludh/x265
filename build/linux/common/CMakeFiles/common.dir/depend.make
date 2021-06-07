@@ -304,6 +304,7 @@ common/CMakeFiles/common.dir/pixel.cpp.o: /encoder/x265/source/encoder/bitcost.h
 common/CMakeFiles/common.dir/pixel.cpp.o: /encoder/x265/source/encoder/motion.h
 common/CMakeFiles/common.dir/pixel.cpp.o: /encoder/x265/source/encoder/reference.h
 common/CMakeFiles/common.dir/pixel.cpp.o: /encoder/x265/source/encoder/slicetype.h
+common/CMakeFiles/common.dir/pixel.cpp.o: /encoder/x265/source/input/input.h
 common/CMakeFiles/common.dir/pixel.cpp.o: /encoder/x265/source/profile/PPA/ppa.h
 common/CMakeFiles/common.dir/pixel.cpp.o: /encoder/x265/source/profile/PPA/ppaApi.h
 common/CMakeFiles/common.dir/pixel.cpp.o: /encoder/x265/source/profile/cpuEvents.h

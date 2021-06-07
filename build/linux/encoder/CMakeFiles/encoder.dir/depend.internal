@@ -166,6 +166,7 @@ encoder/CMakeFiles/encoder.dir/encoder.cpp.o
  /encoder/x265/source/encoder/sei.h
  /encoder/x265/source/encoder/slicetype.h
  /encoder/x265/source/encoder/svt.h
+ /encoder/x265/source/input/input.h
  /encoder/x265/source/profile/PPA/ppa.h
  /encoder/x265/source/profile/PPA/ppaApi.h
  /encoder/x265/source/profile/cpuEvents.h
@@ -247,6 +248,7 @@ encoder/CMakeFiles/encoder.dir/frameencoder.cpp.o
  /encoder/x265/source/encoder/sei.h
  /encoder/x265/source/encoder/slicetype.h
  /encoder/x265/source/encoder/svt.h
+ /encoder/x265/source/input/input.h
  /encoder/x265/source/profile/PPA/ppa.h
  /encoder/x265/source/profile/PPA/ppaApi.h
  /encoder/x265/source/profile/cpuEvents.h
@@ -383,6 +385,7 @@ encoder/CMakeFiles/encoder.dir/ratecontrol.cpp.o
  /encoder/x265/source/encoder/sei.h
  /encoder/x265/source/encoder/slicetype.h
  /encoder/x265/source/encoder/svt.h
+ /encoder/x265/source/input/input.h
  /encoder/x265/source/profile/PPA/ppa.h
  /encoder/x265/source/profile/PPA/ppaApi.h
  /encoder/x265/source/profile/cpuEvents.h
@@ -516,6 +519,7 @@ encoder/CMakeFiles/encoder.dir/slicetype.cpp.o
  /encoder/x265/source/encoder/sei.h
  /encoder/x265/source/encoder/slicetype.cpp
  /encoder/x265/source/encoder/slicetype.h
+ /encoder/x265/source/input/input.h
  /encoder/x265/source/profile/PPA/ppa.h
  /encoder/x265/source/profile/PPA/ppaApi.h
  /encoder/x265/source/profile/cpuEvents.h

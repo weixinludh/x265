@@ -29,7 +29,6 @@
 
 using namespace X265_NS;
 
-int Frame::frame_num = 0;
 
 Frame::Frame()
 {
@@ -66,8 +65,6 @@ Frame::Frame()
     m_edgeBitPlane = NULL;
     m_edgeBitPic = NULL;
     m_isInsideWindow = 0;
-    frame_id = frame_num;
-    ++frame_num;
 }
 
 bool Frame::create(x265_param *param, float* quantOffsets)

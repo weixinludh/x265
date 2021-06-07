@@ -41,6 +41,8 @@ InputFile* InputFile::open(InputFileInfo& info, bool bForceY4m)
         return new YUVInput(info);
 }
 
+const char* HeatMap::annot_dir = NULL;
+
 void HeatMap::png_abort_(const char * s, ...)
 {
         va_list args;

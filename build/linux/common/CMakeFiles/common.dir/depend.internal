@@ -305,6 +305,7 @@ common/CMakeFiles/common.dir/pixel.cpp.o
  /encoder/x265/source/encoder/motion.h
  /encoder/x265/source/encoder/reference.h
  /encoder/x265/source/encoder/slicetype.h
+ /encoder/x265/source/input/input.h
  /encoder/x265/source/profile/PPA/ppa.h
  /encoder/x265/source/profile/PPA/ppaApi.h
  /encoder/x265/source/profile/cpuEvents.h

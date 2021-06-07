@@ -274,27 +274,6 @@ uint32_t LookaheadTLD::acEnergyCu(Frame* curFrame, uint32_t blockX, uint32_t blo
     return var;
 }
 
-uint32_t LookaheadTLD::acEnergyHeatMapCu(Frame* curFrame, uint32_t blockX, uint32_t blockY, int csp, uint32_t qgSize, x265_param* param)
-{
-    intptr_t stride = curFrame->m_fencPic->m_stride;
-    intptr_t cStride = curFrame->m_fencPic->m_strideC;
-    // printf("stride: %d, cStride: %d\n", urFrame->m_fencPic->m_stride, curFrame->m_fencPic->m_strideC);
-    intptr_t blockOffsetLuma = blockX + (blockY * stride);
-    int hShift = CHROMA_H_SHIFT(csp);
-    int vShift = CHROMA_V_SHIFT(csp);
-    intptr_t blockOffsetChroma = (blockX >> hShift) + ((blockY >> vShift) * cStride);
-
-    uint32_t var;
-
-    var  = acEnergyPlane(curFrame, curFrame->m_fencPic->m_picOrg[0] + blockOffsetLuma, stride, 0, csp, qgSize);
-    if (csp != X265_CSP_I400 && curFrame->m_fencPic->m_picCsp != X265_CSP_I400)
-    {
-        var += acEnergyPlane(curFrame, curFrame->m_fencPic->m_picOrg[1] + blockOffsetChroma, cStride, 1, csp, qgSize);
-        var += acEnergyPlane(curFrame, curFrame->m_fencPic->m_picOrg[2] + blockOffsetChroma, cStride, 2, csp, qgSize);
-    }
-    x265_emms();
-    return var;
-}
 
 /* Find the sum of pixels of each block for luma plane */
 uint32_t LookaheadTLD::lumaSumCu(Frame* curFrame, uint32_t blockX, uint32_t blockY, uint32_t qgSize)
@@ -555,31 +534,31 @@ void LookaheadTLD::calcAdaptiveQuantFrame(Frame *curFrame, x265_param* param)
                     if(curFrame->frame_id == 0)
                     {
                         printf("frame id: %d\n", curFrame->frame_id);
-                        printf("stride: %d, cStride: %d\n", curFrame->m_fencPic->m_stride, curFrame->m_fencPic->m_strideC);
+                        printf("stride: %ld, cStride: %ld\n", curFrame->m_fencPic->m_stride, curFrame->m_fencPic->m_strideC);
                         printf("qgSize: %d\n", param->rc.qgSize);
                         printf("block iteration, maxRow: %d, maxCol: %d, loopIncr: %d\n", maxRow, maxCol, loopIncr);
                     }
                     double bit_depth_correction = 1.f / (1 << (2 * (X265_DEPTH - 8)));
                     double frame_heat_avg = 1; // for X265_AQ_HEATMAP
-                    if(param->rc.aqMode == X265_AQ_HEATMAP && curFrame->frame_id == 0)
+                    if(param->rc.aqMode == X265_AQ_HEATMAP)
                     {
                         double frame_heat_sum = 0;
-                        // heatmap_ptr = HeatMap::read_frame_heatmap(curFrame->frame_id);
+                        heatmap_ptr = HeatMap::read_frame_heatmap(curFrame->m_encodeOrder);
                         // printf("here 0\n");
                         // printf("heatmap pointer: %ld\n", (long long)heatmap_ptr);
-                        // for(int i = 0; i < maxRow; ++i)
-                        // {
-                        //     for(int j = 0; j < maxCol; ++j)
-                        //     {
-                        //         frame_heat_sum += heatmap_ptr[i][j];
-                        //         printf("heatmap pixel: %d\n", heatmap_ptr[i][j]);
-                        //     }
-                        // }
-                        printf("here 1\n");
+                        for(int i = 0; i < maxRow; ++i)
+                        {
+                            for(int j = 0; j < maxCol; ++j)
+                            {
+                                frame_heat_sum += heatmap_ptr[i][j];
+                                // printf("heatmap pixel: %d\n", heatmap_ptr[i][j]);
+                            }
+                        }
+                        // printf("here 1\n");
                         // printf("frame heat sum: %lf\n", frame_heat_sum);
-                        // frame_heat_avg = frame_heat_sum / (maxRow * maxCol);
-                        // if(frame_heat_sum == 0)
-                        //     frame_heat_avg = 1;
+                        frame_heat_avg = frame_heat_sum / (maxRow * maxCol);
+                        if(frame_heat_sum == 0)
+                            frame_heat_avg = 1;
                     }
                     if(curFrame->frame_id == 0)
                     {
@@ -612,25 +591,25 @@ void LookaheadTLD::calcAdaptiveQuantFrame(Frame *curFrame, x265_param* param)
                             else if (param->rc.aqMode == X265_AQ_HEATMAP)
                             {
                                 // calculate heatmap average in this block
-                                // int heat_sum = 0;
-                                // int heat_pix_num = 0;
-                                // int** heatmap_ptr = param->rc.heatMapArrByFrame[curFrame->frame_id];
-                                // for(int i = blockY; i < blockY + loopIncr; ++i)
-                                // {
-                                //     if(i >= maxRow)
-                                //         break;
-                                //     for(int j = blockX; j < blockX + loopIncr; ++j)
-                                //     {
-                                //         if( j >= maxCol)
-                                //             continue;
-                                //         heat_sum += heatmap_ptr[i][j];
-                                //         ++heat_pix_num;
-                                //     }
-                                // }
-                                // double block_heat = (double)heat_sum/heat_pix_num;
+                                int heat_sum = 0;
+                                int heat_pix_num = 0;
+                                // if(blockY ==0 && blockX==0)
+                                //     printf("heatmap pointer: %ld\n", (long long)heatmap_ptr);
+                                for(int i = blockY; i < blockY + loopIncr; ++i)
+                                {
+                                    if(i >= maxRow)
+                                        break;
+                                    for(int j = blockX; j < blockX + loopIncr; ++j)
+                                    {
+                                        if( j >= maxCol)
+                                            continue;
+                                        heat_sum += heatmap_ptr[i][j];
+                                        ++heat_pix_num;
+                                    }
+                                }
+                                double block_heat = (double)heat_sum/heat_pix_num;
                                 // with normalization
-                                // qp_adj = pow(energy * bit_depth_correction + 1, 0.1) * block_heat / frame_heat_avg;
-                                qp_adj = pow(energy * bit_depth_correction + 1, 0.1);
+                                qp_adj = pow(energy * bit_depth_correction + 1, 0.1) * block_heat / frame_heat_avg;
                             }
                             else
                                 qp_adj = pow(energy * bit_depth_correction + 1, 0.1);

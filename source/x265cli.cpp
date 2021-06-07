@@ -789,14 +789,14 @@ namespace X265_NS {
         getParamAspectRatio(param, info.sarWidth, info.sarHeight);
 
         HeatMap heatmap;
-        // heatmap.get_annot_dir(param->rc.heatMapDir);
-        for(int i = 0; i < 360; ++i)
-        {
-            for(int j = 0; j < 640; ++j)
-            {
-                printf("heatmap pixel: %d\n", param->rc.heatMapArrByFrame[0][i][j]);
-            }
-        }
+        heatmap.get_annot_dir(param->rc.heatMapDir);
+        // for(int i = 0; i < 360; ++i)
+        // {
+        //     for(int j = 0; j < 640; ++j)
+        //     {
+        //         printf("heatmap pixel: %d\n", param->rc.heatMapArrByFrame[0][i][j]);
+        //     }
+        // }
 
 
         this->input = InputFile::open(info, this->bForceY4m);
