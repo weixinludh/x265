@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/encoder/x265/source/abrEncApp.h
+x265.h
+/encoder/x265/source/x265.h
+scaler.h
+/encoder/x265/source/scaler.h
+threading.h
+/encoder/x265/source/threading.h
+x265cli.h
+/encoder/x265/source/x265cli.h
+
 /encoder/x265/source/common/common.h
 algorithm
 -
@@ -48,6 +58,12 @@ constants.h
 common.h
 /encoder/x265/source/common/common.h
 
+/encoder/x265/source/common/param.h
+
+/encoder/x265/source/common/scaler.h
+common.h
+/encoder/x265/source/common/common.h
+
 /encoder/x265/source/common/threading.h
 common.h
 /encoder/x265/source/common/common.h
@@ -84,40 +100,22 @@ intrin.h
 intrin.h
 -
 
-/encoder/x265/source/input/input.cpp
-input.h
-/encoder/x265/source/input/input.h
-yuv.h
-/encoder/x265/source/input/yuv.h
-y4m.h
-/encoder/x265/source/input/y4m.h
-stdarg.h
--
-sys/types.h
--
-dirent.h
--
-png.h
--
-
 /encoder/x265/source/input/input.h
 common.h
 /encoder/x265/source/input/common.h
 
-/encoder/x265/source/input/y4m.h
-input.h
-/encoder/x265/source/input/input.h
-threading.h
-/encoder/x265/source/input/threading.h
-fstream
--
+/encoder/x265/source/output/output.h
+../x265.h
+/encoder/x265/source/x265.h
+input/input.h
+/encoder/x265/source/output/input/input.h
 
-/encoder/x265/source/input/yuv.h
-input.h
-/encoder/x265/source/input/input.h
+/encoder/x265/source/output/reconplay.h
+../x265.h
+/encoder/x265/source/x265.h
 threading.h
-/encoder/x265/source/input/threading.h
-fstream
+/encoder/x265/source/output/threading.h
+cstdio
 -
 
 /encoder/x265/source/profile/PPA/ppa.h
@@ -136,6 +134,30 @@ ittnotify.h
 ../cpuEvents.h
 /encoder/x265/source/profile/cpuEvents.h
 
+/encoder/x265/source/x265.cpp
+x265.h
+/encoder/x265/source/x265.h
+x265cli.h
+/encoder/x265/source/x265cli.h
+abrEncApp.h
+/encoder/x265/source/abrEncApp.h
+vld.h
+-
+signal.h
+-
+errno.h
+-
+fcntl.h
+-
+string
+-
+ostream
+-
+fstream
+-
+queue
+-
+
 /encoder/x265/source/x265.h
 stdint.h
 -
@@ -143,6 +165,22 @@ stdio.h
 -
 x265_config.h
 /encoder/x265/source/x265_config.h
+
+/encoder/x265/source/x265cli.h
+common.h
+/encoder/x265/source/common.h
+param.h
+/encoder/x265/source/param.h
+input/input.h
+/encoder/x265/source/input/input.h
+output/output.h
+/encoder/x265/source/output/output.h
+output/reconplay.h
+/encoder/x265/source/output/reconplay.h
+getopt.h
+-
+windows.h
+-
 
 x265_config.h
 

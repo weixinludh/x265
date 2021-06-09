@@ -75,8 +75,6 @@ struct RcStats
 class Frame
 {
 public:
-    static int             frame_num;
-    int                    frame_id;
 
     /* These two items will be NULL until the Frame begins to be encoded, at which point
      * it will be assigned a FrameData instance, which comes with a reconstructed image PicYuv */

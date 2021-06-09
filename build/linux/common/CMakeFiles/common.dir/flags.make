@@ -10,7 +10,7 @@ CXX_INCLUDES = -I/encoder/x265/source/. -I/encoder/x265/source/common -I/encoder
 
 # Custom flags: common/CMakeFiles/common.dir/cpu.cpp.o_FLAGS = -Wno-narrowing
 
-# Custom flags: common/CMakeFiles/common.dir/version.cpp.o_FLAGS = -DX265_VERSION=3.4+32-373a66fb1
+# Custom flags: common/CMakeFiles/common.dir/version.cpp.o_FLAGS = -DX265_VERSION=unknown
 
 # Custom flags: common/CMakeFiles/common.dir/param.cpp.o_FLAGS = -DHAVE_STRTOK_R=1
 

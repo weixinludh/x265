@@ -1800,6 +1800,9 @@ int Encoder::encode(const x265_picture* pic_in, x265_picture* pic_out)
         inFrame->m_fencPic->copyFromPicture(*inputPic, *m_param, m_sps.conformanceWindow.rightOffset, m_sps.conformanceWindow.bottomOffset);
 
         inFrame->m_poc       = ++m_pocLast;
+#ifdef DEBUG_FRAME_ID
+        printf("frame m_poc: %d\n", inFrame->m_poc);
+#endif
         inFrame->m_userData  = inputPic->userData;
         inFrame->m_pts       = inputPic->pts;
         if (m_param->bHistBasedSceneCut)

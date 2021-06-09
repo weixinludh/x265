@@ -23,6 +23,7 @@
 
 #ifndef X265_ENCODER_H
 #define X265_ENCODER_H
+#define DEBUG_FRAME_ID
 
 #include "common.h"
 #include "slice.h"

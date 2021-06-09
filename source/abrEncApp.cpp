@@ -704,7 +704,8 @@ ret:
                         }
                     }
                 }
-
+                // printf("inFrameCount: %d\n", inFrameCount);
+                // printf("inputPicNum: %d\n", inputPicNum);
                 for (int inputNum = 0; inputNum < inputPicNum; inputNum++)
                 {
                     x265_picture *picInput = NULL;
@@ -712,7 +713,7 @@ ret:
                         picInput = pic_in ? (inputNum ? &picField2 : &picField1) : NULL;
                     else
                         picInput = pic_in;
-
+                    
                     int numEncoded = api->encoder_encode(m_encoder, &p_nal, &nal, picInput, pic_recon);
 
                     int idx = (inFrameCount - 1) % m_parent->m_queueSize;

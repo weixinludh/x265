@@ -444,6 +444,7 @@ void LookaheadTLD::xPreanalyze(Frame* curFrame)
 
 void LookaheadTLD::calcAdaptiveQuantFrame(Frame *curFrame, x265_param* param)
 {
+    printf("m_poc: %d\n", curFrame->m_poc);
     /* Actual adaptive quantization */
     int maxCol = curFrame->m_fencPic->m_picWidth;
     int maxRow = curFrame->m_fencPic->m_picHeight;
@@ -531,19 +532,21 @@ void LookaheadTLD::calcAdaptiveQuantFrame(Frame *curFrame, x265_param* param)
 
                 if (param->rc.aqMode == X265_AQ_AUTO_VARIANCE || param->rc.aqMode == X265_AQ_AUTO_VARIANCE_BIASED || param->rc.aqMode == X265_AQ_EDGE || param->rc.aqMode == X265_AQ_HEATMAP)
                 {
-                    if(curFrame->frame_id == 0)
+#ifdef DEBUG_CALC_AQ
+                    if(curFrame->m_poc == 0)
                     {
-                        printf("frame id: %d\n", curFrame->frame_id);
+                        printf("frame id: %d\n", curFrame->m_poc);
                         printf("stride: %ld, cStride: %ld\n", curFrame->m_fencPic->m_stride, curFrame->m_fencPic->m_strideC);
                         printf("qgSize: %d\n", param->rc.qgSize);
                         printf("block iteration, maxRow: %d, maxCol: %d, loopIncr: %d\n", maxRow, maxCol, loopIncr);
                     }
+#endif
                     double bit_depth_correction = 1.f / (1 << (2 * (X265_DEPTH - 8)));
                     double frame_heat_avg = 1; // for X265_AQ_HEATMAP
                     if(param->rc.aqMode == X265_AQ_HEATMAP)
                     {
                         double frame_heat_sum = 0;
-                        heatmap_ptr = HeatMap::read_frame_heatmap(curFrame->m_encodeOrder);
+                        heatmap_ptr = HeatMap::read_frame_heatmap(curFrame->m_poc);
                         // printf("here 0\n");
                         // printf("heatmap pointer: %ld\n", (long long)heatmap_ptr);
                         for(int i = 0; i < maxRow; ++i)
@@ -560,10 +563,12 @@ void LookaheadTLD::calcAdaptiveQuantFrame(Frame *curFrame, x265_param* param)
                         if(frame_heat_sum == 0)
                             frame_heat_avg = 1;
                     }
-                    if(curFrame->frame_id == 0)
+#ifdef DEBUG_CALC_AQ
+                    if(curFrame->m_poc == 0)
                     {
                         printf("frame heat avg: %lf\n", frame_heat_avg);
                     }
+#endif
                     for (int blockY = 0; blockY < maxRow; blockY += loopIncr)
                     {
                         for (int blockX = 0; blockX < maxCol; blockX += loopIncr)

@@ -295,6 +295,7 @@ int main(int argc, char **argv)
 
     int ret = 0;
 
+    printf("numEncodes: %d\n", numEncodes);
     AbrEncoder* abrEnc = new AbrEncoder(cliopt, numEncodes, ret);
     int threadsActive = abrEnc->m_numActiveEncodes.get();
     while (threadsActive)

@@ -177,15 +177,15 @@ common/CMakeFiles/common.dir/cpu.cpp.s: cmake_force
 common/CMakeFiles/common.dir/version.cpp.o: common/CMakeFiles/common.dir/flags.make
 common/CMakeFiles/common.dir/version.cpp.o: /encoder/x265/source/common/version.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/encoder/x265/build/linux/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object common/CMakeFiles/common.dir/version.cpp.o"
-	cd /encoder/x265/build/linux/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+32-373a66fb1 -o CMakeFiles/common.dir/version.cpp.o -c /encoder/x265/source/common/version.cpp
+	cd /encoder/x265/build/linux/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=unknown -o CMakeFiles/common.dir/version.cpp.o -c /encoder/x265/source/common/version.cpp
 
 common/CMakeFiles/common.dir/version.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/version.cpp.i"
-	cd /encoder/x265/build/linux/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+32-373a66fb1 -E /encoder/x265/source/common/version.cpp > CMakeFiles/common.dir/version.cpp.i
+	cd /encoder/x265/build/linux/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=unknown -E /encoder/x265/source/common/version.cpp > CMakeFiles/common.dir/version.cpp.i
 
 common/CMakeFiles/common.dir/version.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/version.cpp.s"
-	cd /encoder/x265/build/linux/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+32-373a66fb1 -S /encoder/x265/source/common/version.cpp -o CMakeFiles/common.dir/version.cpp.s
+	cd /encoder/x265/build/linux/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=unknown -S /encoder/x265/source/common/version.cpp -o CMakeFiles/common.dir/version.cpp.s
 
 common/CMakeFiles/common.dir/threading.cpp.o: common/CMakeFiles/common.dir/flags.make
 common/CMakeFiles/common.dir/threading.cpp.o: /encoder/x265/source/common/threading.cpp
