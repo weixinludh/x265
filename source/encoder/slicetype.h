@@ -21,7 +21,7 @@
  * This program is also available under a commercial proprietary license.
  * For more information, contact us at license @ x265.com.
  *****************************************************************************/
-#define DEBUG_CALC_AQ
+
 #ifndef X265_SLICETYPE_H
 #define X265_SLICETYPE_H
 

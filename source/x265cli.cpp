@@ -817,7 +817,9 @@ namespace X265_NS {
         param->sourceHeight = info.height;
         param->internalCsp = info.csp;
         param->sourceBitDepth = info.depth;
+#ifdef DEBUG_CLI
         printf("input video, height: %d, width: %d\n", param->sourceHeight, param->sourceWidth);
+#endif
 
         /* Accept fps and sar from file info if not specified by user */
         if (param->fpsDenom == 0 || param->fpsNum == 0)

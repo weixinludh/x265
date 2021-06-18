@@ -100,6 +100,12 @@ intrin.h
 intrin.h
 -
 
+/encoder/x265/source/encoder/svt.h
+EbApi.h
+/encoder/x265/source/encoder/EbApi.h
+EbErrorCodes.h
+/encoder/x265/source/encoder/EbErrorCodes.h
+
 /encoder/x265/source/input/input.h
 common.h
 /encoder/x265/source/input/common.h
@@ -165,6 +171,12 @@ stdio.h
 -
 x265_config.h
 /encoder/x265/source/x265_config.h
+
+/encoder/x265/source/x265cli.cpp
+x265cli.h
+/encoder/x265/source/x265cli.h
+svt.h
+/encoder/x265/source/svt.h
 
 /encoder/x265/source/x265cli.h
 common.h

@@ -26,6 +26,7 @@
 #ifndef ABR_ENCODE_H
 #define ABR_ENCODE_H
 
+
 #include "x265.h"
 #include "scaler.h"
 #include "threading.h"

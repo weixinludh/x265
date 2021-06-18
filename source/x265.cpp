@@ -20,7 +20,7 @@
  * This program is also available under a commercial proprietary license.
  * For more information, contact us at license @ x265.com.
  *****************************************************************************/
-
+// #define DEBUG_MAIN
 #if _MSC_VER
 #pragma warning(disable: 4127) // conditional expression is constant, yes I know
 #endif
@@ -294,8 +294,9 @@ int main(int argc, char **argv)
     }
 
     int ret = 0;
-
+#ifdef DEBUG_MAIN
     printf("numEncodes: %d\n", numEncodes);
+#endif
     AbrEncoder* abrEnc = new AbrEncoder(cliopt, numEncodes, ret);
     int threadsActive = abrEnc->m_numActiveEncodes.get();
     while (threadsActive)

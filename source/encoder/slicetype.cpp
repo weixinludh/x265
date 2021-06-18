@@ -444,7 +444,9 @@ void LookaheadTLD::xPreanalyze(Frame* curFrame)
 
 void LookaheadTLD::calcAdaptiveQuantFrame(Frame *curFrame, x265_param* param)
 {
+#ifdef DEBUG_CALC_AQ
     printf("m_poc: %d\n", curFrame->m_poc);
+#endif
     /* Actual adaptive quantization */
     int maxCol = curFrame->m_fencPic->m_picWidth;
     int maxRow = curFrame->m_fencPic->m_picHeight;
